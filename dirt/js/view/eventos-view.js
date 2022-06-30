@@ -7,8 +7,8 @@ export class EventosView {
             <table>
                 <thead>
                     <tr>
-                        <th>Data<th>
-                        <th>Nome<th>
+                        <th>Data</th>
+                        <th>Nome</th>
                     <tr>
                 <thead>
                 <tbody>
@@ -21,7 +21,7 @@ export class EventosView {
                         `;
         })}
                 </tbody>
-            <table>
+            </table>
         `;
     }
     update(model) {
