@@ -60,5 +60,22 @@ table td {
     border: 1px solid #000;
     text-align: center;
 }
+#mensagemAlert {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.alert {
+    display: block;
+    text-align: center;
+    background-color: rgba(227, 245, 129, 0.788);
+    color: #000;
+    width: 400px;
+    padding: 30px;
+    margin: 15px;
+    border-radius: 10px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
 
 

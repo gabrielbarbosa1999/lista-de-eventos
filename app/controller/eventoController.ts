@@ -1,12 +1,14 @@
 import { Evento } from "../models/evento.js";
 import { Eventos } from "../models/eventos.js";
 import { EventosView } from "../view/eventos-view.js";
+import { MensagemView } from "../view/mensagem-view.js";
 
 export class EventoController {
     private inputData: HTMLInputElement;
     private inputNome: HTMLInputElement;
     private eventos = new Eventos();
     private eventoView = new EventosView('#lista');
+    private mensagemView = new MensagemView('#mensagemAlert');
 
     constructor() {
         this.inputData = document.querySelector('#data');
@@ -19,6 +21,7 @@ export class EventoController {
         this.eventos.adicionar(evento);
         console.log(this.eventos.listar());
         this.eventoView.update(this.eventos);
+        this.mensagemView.update('Evento adicionado com sucesso!')
         this.limparForumlario();
     }
 

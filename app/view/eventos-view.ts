@@ -1,11 +1,7 @@
 import { Eventos } from "../models/eventos.js";
+import { View } from "./view.js";
 
-export class EventosView {
-    private elemento: HTMLElement;
-    constructor(seletor: string) {
-        this.elemento = document.querySelector(seletor);
-    }
-    
+export class EventosView extends View {
     templete(model: Eventos): string {
         return `
             <table>

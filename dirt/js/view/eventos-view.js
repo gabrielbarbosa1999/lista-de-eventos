@@ -1,7 +1,5 @@
-export class EventosView {
-    constructor(seletor) {
-        this.elemento = document.querySelector(seletor);
-    }
+import { View } from "./view.js";
+export class EventosView extends View {
     templete(model) {
         return `
             <table>
