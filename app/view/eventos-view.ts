@@ -2,7 +2,7 @@ import { Eventos } from "../models/eventos.js";
 import { View } from "./view.js";
 
 export class EventosView extends View<Eventos> {
-    templete(model: Eventos): string {
+    protected templete(model: Eventos): string {
         return `
             <table>
                 <thead>
@@ -15,7 +15,7 @@ export class EventosView extends View<Eventos> {
                     ${model.listar().map(eventos => {
                         return `
                         <tr>
-                            <td>${new Intl.DateTimeFormat().format(eventos.data)}</td>
+                            <td>${this.formatar(eventos.data)}</td>
                             <td>${eventos.nome}</td>
                         </tr>
                         `;
@@ -23,5 +23,9 @@ export class EventosView extends View<Eventos> {
                 </tbody>
             </table>
         `;
+    }
+
+    private formatar(data: Date) {
+        return new Intl.DateTimeFormat().format(data);
     }
 }

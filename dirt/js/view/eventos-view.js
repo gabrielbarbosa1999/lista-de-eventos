@@ -13,7 +13,7 @@ export class EventosView extends View {
                     ${model.listar().map(eventos => {
             return `
                         <tr>
-                            <td>${new Intl.DateTimeFormat().format(eventos.data)}</td>
+                            <td>${this.formatar(eventos.data)}</td>
                             <td>${eventos.nome}</td>
                         </tr>
                         `;
@@ -21,5 +21,8 @@ export class EventosView extends View {
                 </tbody>
             </table>
         `;
+    }
+    formatar(data) {
+        return new Intl.DateTimeFormat().format(data);
     }
 }

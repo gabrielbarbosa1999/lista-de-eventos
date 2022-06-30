@@ -1,11 +1,13 @@
 export class View {
-    constructor(seletor) {
+    constructor(seletor, escapar) {
+        this.escapar = false;
         this.elemento = document.querySelector(seletor);
     }
-    templete(model) {
-        throw Error('E necessário declarar o metodo templete na classe filhas');
-    }
     update(model) {
+        let templete = this.templete(model);
+        if (this.escapar) {
+            templete = templete.replace(/<script>[\s\S]*?<\/script>/, '');
+        }
         this.elemento.innerHTML = this.templete(model);
     }
 }

@@ -1,14 +1,18 @@
-export class View<T> {
+export abstract class View<T> {
     protected elemento: HTMLElement;
-    constructor(seletor: string) {
+    private escapar = false;
+
+    constructor(seletor: string, escapar?: boolean) {
         this.elemento = document.querySelector(seletor);
     }
 
-    templete(model: T): string {
-        throw Error('E necessário declarar o metodo templete na classe filhas');
-    }
+    protected abstract templete(model: T): string;
 
-    update(model: T): void {
+    public update(model: T): void  {
+        let templete = this.templete(model);
+        if(this.escapar) {
+            templete = templete.replace(/<script>[\s\S]*?<\/script>/, '');
+        }
         this.elemento.innerHTML =  this.templete(model);
     }
 }
