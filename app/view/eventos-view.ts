@@ -1,7 +1,7 @@
 import { Eventos } from "../models/eventos.js";
 import { View } from "./view.js";
 
-export class EventosView extends View {
+export class EventosView extends View<Eventos> {
     templete(model: Eventos): string {
         return `
             <table>
@@ -23,9 +23,5 @@ export class EventosView extends View {
                 </tbody>
             </table>
         `;
-    }
-
-    update(model: Eventos): void {
-        this.elemento.innerHTML =  this.templete(model);
     }
 }

@@ -22,7 +22,4 @@ export class EventosView extends View {
             </table>
         `;
     }
-    update(model) {
-        this.elemento.innerHTML = this.templete(model);
-    }
 }
