@@ -12,8 +12,8 @@ export class EventoController {
     private mensagemView = new MensagemView('#mensagemAlert', true);
 
     constructor() {
-        this.inputData = document.querySelector('#data');
-        this.inputNome = document.querySelector('#nome');
+        this.inputData = document.querySelector('#data') as HTMLInputElement;
+        this.inputNome = document.querySelector('#nome') as HTMLInputElement;
         this.eventoView.update(this.eventos);
     }
 

@@ -1,9 +1,11 @@
 import { EventoController } from "./controller/eventoController.js";
-
-const form = document.querySelector('#form');
 const controller = new EventoController();
-
-form.addEventListener("submit", event => {
-    event.preventDefault();
-    controller.adicionar();
-});
+const form = document.querySelector('#form');
+if(form) {
+    form.addEventListener("submit", event => {
+        event.preventDefault();
+        controller.adicionar();
+    })
+}  else {
+    throw Error('Não foi possivel inicializar a aplicação. Verifique se o form existe')
+}
