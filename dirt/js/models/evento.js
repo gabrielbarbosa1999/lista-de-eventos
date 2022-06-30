@@ -1,10 +1,11 @@
 export class Evento {
-    constructor(data, nome) {
-        this._data = data;
-        this._nome = nome;
+    constructor(_data, _nome) {
+        this._data = _data;
+        this._nome = _nome;
     }
     get data() {
-        return this._data;
+        const data = new Date(this._data.getTime());
+        return data;
     }
     get nome() {
         return this._nome;

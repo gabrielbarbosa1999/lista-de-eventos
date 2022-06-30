@@ -1,14 +1,13 @@
 export class Evento {
-    private _data: Date;
-    private _nome: String;
 
-    constructor(data: Date, nome: String) {
-        this._data = data;
-        this._nome = nome;
-    }
+    constructor(
+        private _data: Date,
+        private readonly _nome: String
+    ){}
 
     get data(): Date{
-        return this._data;
+        const data = new Date(this._data.getTime());
+        return data;
     }
 
     get nome(): String {

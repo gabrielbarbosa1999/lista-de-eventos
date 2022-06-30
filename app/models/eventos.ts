@@ -7,7 +7,7 @@ export class Eventos {
         this.eventos.push(evento);
     }
 
-    listar(): ReadonlyArray<Evento> {
+    listar(): readonly Evento[] {
         return this.eventos;
     }
 }
