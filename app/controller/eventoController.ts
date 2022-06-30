@@ -11,13 +11,14 @@ export class EventoController {
     constructor() {
         this.inputData = document.querySelector('#data');
         this.inputNome = document.querySelector('#nome');
-        this.eventoView.update();
+        this.eventoView.update(this.eventos);
     }
 
     adicionar() {
         const evento = this.criarEvento();
         this.eventos.adicionar(evento);
         console.log(this.eventos.listar());
+        this.eventoView.update(this.eventos);
         this.limparForumlario();
     }
 
